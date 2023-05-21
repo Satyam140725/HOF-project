@@ -1,0 +1,115 @@
+<script>
+
+
+    // QUestion 1 
+    // Reverse string
+   
+    function reverseString(x){
+    let name = x.length;
+    let str = []
+    for(let i=name ; i>=0; i--){
+       str.push(x[i])
+       
+        
+    }
+    return str.join(` `)
+    }
+    console.log(reverseString("convert"))
+
+    
+    //Question 2
+    // 2. Random Number Generator with Delay and Progress Indication:
+    
+     function randomNumber(){
+         let Onesec = setTimeout(function(){
+             console.log("Only 2 Second left ")
+            },1000);
+            
+         let Twosec = setTimeout(function(){
+                console.log("Only 1 Second left ")
+            },2000);
+
+         let threeSec = setTimeout(function(){
+             let Num = Math.random()
+             console.log(Num)
+            },3000);      
+      
+     }
+    console.log(randomNumber())
+    
+    
+    // Question 3
+    // Build a feature for Store's Inventory.
+    
+       const Inventory = {
+        item1 : 100,
+        item2 : 200,
+        item3 : 300,
+        item4 : 400,
+        item5 : 500,
+       }
+
+       const exchangePrice = 80;
+       const convertedInventory = {};
+
+       Object.keys(Inventory).map((item) => {
+       const priceInRupees = Inventory[item] * exchangePrice;
+       convertedInventory[item] = priceInRupees;
+      });
+
+       console.log(convertedInventory);
+
+
+// Qustion 4
+// 4. Filtering and Capitalizing: Books Published After 2010 with Author Names.
+
+// create book
+
+    const booklist = [
+        {'title':'Rich dad Poor dad','author':'Robert Kiyosaki', 'year':1997},
+        {'title':'Think and grow rich','author':'Nepolin hill', 'year':2011},
+        {'title':'The Richest man in babylon','author':'George S. Clason', 'year':1926}
+    ]
+    function filterbook(booklist){
+        const filteredbook = booklist.filter(book=>book.year>=2010) 
+                             .map(book =>{
+                              book.author = book.author.toUpperCase();
+                              return book;   
+        })
+        return filteredbook;
+    }
+
+    const filteredBooks = filterbook(booklist);
+    console.log(filteredBooks);
+    console.log(booklist)
+
+
+// Question 5
+// 5. URL valdiation
+
+
+const regex = /^(http:\/\/|https:\/\/)[A-Za-z0-9\-._~:/?#[\]@!$&'()*+,;=]+[.][A-Za-z]+$/;
+
+function isValid(url){
+    if(regex.test(url)){
+        console.log("The URL is Valid.");
+    }else{ 
+        console.log("The URL is not Vaid.");
+
+        }
+    }
+    isValid("http://www.example.com");
+
+// Question 6
+//  LinkedIn Profile URL Validator.
+ const Regex = /^https:\/\/www\.linkedin\.com\/in\/[A-Za-z0-9_-]{5,30}[A-Za-z0-9]$/;
+
+ function isValid(url){
+    if (Regex.test(url)){
+        console.log("The LinkedIn profile URL is Valid.");
+    }else{ 
+        console.log("The LinkedIn profile URL is not Vaid.");
+
+        }
+    }
+</script>
